@@ -1,0 +1,468 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* header */
+header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid rgba(3, 8, 22, 0.829);
+  transition: all 0.4s ease-in-out;
+  padding: 10px 0px;
+  z-index: 100;
+}
+
+header.sticky {
+  background: #fff;
+  opacity: 0.9;
+  z-index: 121;
+  border-bottom: 2px solid #151515;
+  position: fixed;
+}
+
+header #main-menu a {
+  color: #000 !important;
+  text-decoration: none;
+}
+
+header.sticky #main-menu a {
+  color: #000;
+}
+
+header.sticky #logo a {
+  color: #140c07;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0px auto;
+  max-width: 960px;
+}
+
+.inner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul#main-menu {
+  display: flex;
+}
+
+ul#main-menu a {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 15px;
+  font-family: "Poppins", sans-serif;
+  font-family: "Whisper", cursive;
+  display: block;
+  color: #fff;
+}
+/* drop down */
+
+/* Nút Dropdown*/
+
+/* Thiết lập vị trí cho thẻ div với class dropdown*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* Nội dung Dropdown */
+.noidung_dropdown {
+  /*Ẩn nội dung các đường dẫn*/
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+/* Thiết kế style cho các đường dẫn trong Dropdown */
+.noidung_dropdown a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* thay đổi màu background khi hover vào đường dẫn */
+/* .noidung_dropdown a:hover {
+  background-color: rgb(30, 163, 70); 
+}  */
+/* hiển thị nội dung dropdown khi hover */
+.dropdown:hover .noidung_dropdown {
+  display: block;
+}
+
+/* drop down */
+
+#logo {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  display: block;
+  color: #fff;
+}
+
+#logo a {
+  color: #140c07;
+  text-decoration: none;
+}
+
+header #main-menu a:hover {
+  transform: scale(1.2);
+}
+
+/* end header */
+
+/*IMG SLIDER */
+
+.slider-container {
+  padding-top: 50%;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  object-fit: cover;
+}
+
+.slider {
+  position: absolute;
+  left: 0;
+  z-index: 120;
+  width: 100%;
+  bottom: 0;
+}
+
+.slider label {
+  cursor: pointer;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50px;
+  margin: 0 0.2em 1em;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 10;
+  padding: 8em 1em 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  transition: left 0s 0.75s;
+}
+
+[id^="slide"]:checked + .slide {
+  left: 0;
+  z-index: 100;
+  transition: left 0.65s ease-out;
+}
+
+.slide-1 {
+  background-image: url("/images/flat-lay-food.jpg");
+}
+.slide-2 {
+  background-image: url("/images/healthy-eating-ingredients-732x549-thumbnail.jpg");
+}
+.slide-3 {
+  background-image: url("/images/iStock-1131794876.t5d482e40.m800.xtDADj9SvTVFjzuNeGuNUUGY4tm5d6UGU5tkKM0s3iPk-620x342.jpg");
+}
+
+/*END IMG SLIDER */
+
+/* Content style */
+.content-container {
+  margin: 20px 20px;
+}
+
+.content-container .content {
+  display: flex;
+  align-items: center;
+}
+
+.img a img {
+  width: 450px;
+  height: 450px;
+  justify-content: center;
+  background-size: cover;
+  border-radius: 10px;
+  opacity: 0.9;
+  object-fit: cover;
+}
+
+/* End content style */
+
+/* backtop */
+#backtop {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(30, 163, 70);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+/* end backtop */
+
+/* ABOUT US */
+
+.flip-card {
+  margin: 20px;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.flip-card-front,
+.flip-card-back {
+  width: 220px;
+  min-height: 300px;
+  height: auto;
+  background-color: #000000;
+  background-image: url(/images/NTT.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  object-fit: cover;
+}
+
+.flip-card:nth-of-type(2) .flip-card-front,
+.flip-card:nth-of-type(2) .flip-card-back {
+  background-image: url(/images/LSH.jpg);
+}
+
+.flip-card:nth-of-type(3) .flip-card-front,
+.flip-card:nth-of-type(3) .flip-card-back {
+  background-image: url(/images/LQ.jpg);
+}
+.flip-card:nth-of-type(4) .flip-card-front,
+.flip-card:nth-of-type(4) .flip-card-back {
+  background-image: url(/images/Quang.jpg);
+}
+.flip-card:nth-of-type(5) .flip-card-front,
+.flip-card:nth-of-type(5) .flip-card-back {
+  background-image: url(/images/pt.jpg);
+}
+
+.flip-card-front {
+  transform: rotateY(0deg);
+}
+
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+}
+
+.flip-card-front::after,
+.flip-card-back::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+}
+
+.flip-card-front .inner,
+.flip-card-back .inner {
+  width: 100%;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateZ(60px) scale(0.94);
+  z-index: 2;
+}
+
+.inner .icon {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  border: 2px solid rgb(86, 104, 92);
+}
+
+.inner .social-icon a {
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.inner .social-icon a:hover {
+  transform: scale(1.3);
+  color: #fff;
+}
+
+.inner h3 {
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.inner p {
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+#aboutus h4 {
+  color: #948f7e;
+  font-weight: Bold;
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 14px;
+  margin-bottom: 5px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+#aboutus h2 {
+  font-size: 60px;
+  font-weight: 300;
+  text-align: center;
+  color: #948f7e;
+  letter-spacing: 2px;
+}
+
+#aboutus {
+  background-color: rgb(252, 243, 243);
+  object-fit: cover;
+  /* opacity: 1; */
+}
+
+.icon i {
+  color: white;
+}
+
+.row {
+  z-index: 99;
+  margin-left: 22px;
+}
+
+.social-icon {
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 20px;
+  list-style: none;
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-icon a {
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 20px;
+  list-style: none;
+  color: #fff;
+  text-decoration: none;
+}
+
+.flip-card:hover .flip-card-front {
+  transform: rotateY(-180deg);
+}
+
+.flip-card:hover .flip-card-back {
+  transform: rotateY(0deg);
+}
+
+/* END ABOUT US */
+
+/* /* footer  */
+
+footer {
+  color: #fff;
+  margin-top: 10px;
+  display: block;
+}
+
+.footer-top {
+  background-image: linear-gradient(
+    to right,
+    rgb(56, 75, 62),
+    rgb(63, 77, 67),
+    rgb(218, 199, 199)
+  );
+}
+
+.footer-bottom {
+  background: rgba(29, 26, 26, 0.2);
+  display: flex;
+  text-align: center;
+}
+
+.footer-bottom p {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #140c07;
+  font-family: "Poppins", sans-serif;
+  font-family: "Whisper", cursive;
+}
+
+/* .footer-about{
+  border-right: 1px dashed #000;
+}
+
+.footer-contact{
+  border-right: 1px dashed #000;
+} */
+
+.icon-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-about p a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.insta {
+  text-decoration: none;
+  color: #fff;
+}
+
+.insta:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.icon-link:hover {
+  text-decoration: none;
+  color: #fff;
+}
+/* end footer */
